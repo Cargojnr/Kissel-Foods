@@ -213,6 +213,38 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* Google Map Embed */}
+      <section className="section-padding">
+        <div className="max-w-7xl mx-auto">
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <p className="overline mb-4">Want to find us</p>
+            <h2 className="heading-section text-foreground">
+              Our <span className="text-gradient-gold">Location</span>
+            </h2>
+            <div className="divider-gold mt-6" />
+          </motion.div>
+
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.3586531882443!2d-0.4961662263565395!3d5.513667734076711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdfb100774e1385%3A0x9a7cf942302c9222!2sKissel%20Foods!5e0!3m2!1sen!2sgh!4v1769084231815!5m2!1sen!2sgh" 
+                 width="100%"
+                  height="100%"
+                 style={{ border: 0 }} 
+                allowFullScreen
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                  title={`${restaurant.name} "Location"`}
+                />
+              </div>
+              </div>
+              </section>
     </main>
   );
 }
