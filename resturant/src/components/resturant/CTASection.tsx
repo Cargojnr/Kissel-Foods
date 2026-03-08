@@ -49,7 +49,7 @@ export default function CTASection() {
               <span>Call Now</span>
             </motion.a>
             <motion.a
-              href='/'
+              href='#'
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
                className="btn-luxury group"

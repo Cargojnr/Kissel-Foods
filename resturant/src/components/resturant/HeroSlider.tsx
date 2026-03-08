@@ -144,7 +144,7 @@ export default function HeroSlider() {
                           <span>Reserve a Table</span>
                         </motion.a>
                         <motion.a
-                        href=''
+                        href='#'
                           className="btn-outline-gold"
                         >
                           <Link
