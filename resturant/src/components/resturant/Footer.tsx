@@ -13,6 +13,7 @@ const footerLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Gallery", path: "/gallery" },
+  { name: "Book Online", path: "/reservation" },
 ];
 
 export default function Footer() {

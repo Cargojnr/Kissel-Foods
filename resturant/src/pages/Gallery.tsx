@@ -28,7 +28,7 @@ const galleryImages = [
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
 
   const filteredImages =
     activeCategory === "All"
@@ -69,7 +69,7 @@ export default function Gallery() {
             className="flex flex-wrap justify-center gap-4"
           >
             {categories.map((category) => (
-              <button
+             <motion.button
                 key={category}
                 onClick={() => setActiveCategory(category)}
                 className={`px-6 py-3 text-sm font-body font-medium tracking-widest uppercase transition-all duration-300 ${
@@ -79,7 +79,7 @@ export default function Gallery() {
                 }`}
               >
                 {category}
-              </button>
+              </motion.button>
             ))}
           </motion.div>
         </div>
@@ -102,7 +102,7 @@ export default function Gallery() {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   className="relative group cursor-pointer aspect-square overflow-hidden"
-                  onClick={() => setSelectedImage(image.src)}
+                  onClick={() => setSelectedImage(image)}
                 >
                   <img
                     src={image.src}
@@ -114,11 +114,20 @@ export default function Gallery() {
                   {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                     <p className="text-primary text-xs font-body font-medium tracking-widest uppercase mb-2">
-                      {image.category}
+                      
                     </p>
                     <p className="text-foreground font-elegant text-lg">
-                      {image.alt}
+                      
                     </p>
+                  </div>
+                   {/* Overlay Content */}
+                  <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <span className="text-primary text-xs font-semibold uppercase tracking-wider">
+                      {image.category}
+                    </span>
+                    <h3 className="text-xl font-bold text-foreground mt-1">
+                      {image.alt}
+                    </h3>
                   </div>
                 </motion.div>
               ))}
@@ -146,16 +155,32 @@ export default function Gallery() {
             >
               <X className="w-8 h-8" />
             </motion.button>
+             <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              onClick={(e) => e.stopPropagation()}
+              className="max-w-5xl w-full"
+            >
             <motion.img
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.3 }}
-              src={selectedImage}
+              src={selectedImage.src}
               alt="Gallery image"
               className="max-w-full max-h-[85vh] object-contain"
               onClick={(e) => e.stopPropagation()}
             />
+             <div className="text-center mt-6">
+               <span className="text-primary text-sm font-semibold uppercase tracking-wider">
+                  {selectedImage.category}
+                </span>
+                <h3 className="text-2xl font-bold text-foreground mt-2">
+                  {selectedImage.alt}
+                </h3>
+              </div>
+          </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

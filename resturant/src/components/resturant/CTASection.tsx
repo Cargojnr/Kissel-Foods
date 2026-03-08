@@ -47,16 +47,17 @@ export default function CTASection() {
               <Phone className="w-5 h-5" />
               <span>Call Now</span>
             </motion.a>
-            <motion.button
+            <motion.a
+              href='/reservation'
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="btn-luxury group"
+               className="btn-luxury group"
             >
               <span className="inline-flex items-center gap-3">
                 <Calendar className="w-5 h-5" />
                 Book Online
               </span>
-            </motion.button>
+            </motion.a>
           </div>
 
           <p className="text-muted-foreground text-sm font-body mt-8">

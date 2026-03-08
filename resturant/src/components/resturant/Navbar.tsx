@@ -8,6 +8,7 @@ const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Gallery", path: "/gallery" },
+  { name: "Reservation", path: "/reservation" },
 ];
 
 export default function Navbar() {
@@ -147,8 +148,11 @@ export default function Navbar() {
                   >
                     {link.name}
                   </Link>
+                  
                 </motion.div>
+                
               ))}
+              
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
