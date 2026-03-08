@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 import { motion, AnimatePresence } from "framer-motion";
@@ -143,12 +144,15 @@ export default function HeroSlider() {
                           <span>Reserve a Table</span>
                         </motion.a>
                         <motion.a
-                        href='gallery'
-                          whileHover={{ scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
+                        href=''
                           className="btn-outline-gold"
                         >
+                          <Link
+                                         to='gallery'
+                                        className="text-muted-foreground hover:text-primary transition-colors duration-300 font-body text-sm link-underline"
+                                            >
                           Explore Menu
+                          </Link>
                         </motion.a>
                       </motion.div>
                     </motion.div>
