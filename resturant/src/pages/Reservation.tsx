@@ -72,7 +72,7 @@ export default function Reservations() {
         </p>
       </section>
 
-      <form onSubmit={handleSubmit} className="max-w-3xl mx-auto px-6">
+      <form onSubmit={handleSubmit} className="max-w-3xl mx-auto px-4 md:px-6">
         <div className="bg-card border border-border/50 rounded-lg p-8 md:p-12 space-y-10 elegant-shadow">
           
           {/* Date & Time Row */}
