@@ -143,8 +143,9 @@ export default function HeroSlider() {
                           <Phone className="w-4 h-4" />
                           <span>Reserve a Table</span>
                         </motion.a>
-                        <motion.a
-                        href='#'
+                       <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
                           className="btn-outline-gold"
                         >
                           <Link
@@ -153,7 +154,7 @@ export default function HeroSlider() {
                                             >
                           Explore Menu
                           </Link>
-                        </motion.a>
+                        </motion.div>
                       </motion.div>
                     </motion.div>
                   )}

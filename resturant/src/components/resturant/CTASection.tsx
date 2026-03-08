@@ -48,8 +48,7 @@ export default function CTASection() {
               <Phone className="w-5 h-5" />
               <span>Call Now</span>
             </motion.a>
-            <motion.a
-              href='reservation'
+            <motion.div
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
                className="btn-luxury group"
@@ -64,7 +63,7 @@ export default function CTASection() {
               </span>
                   </Link>
               
-            </motion.a>
+            </motion.div>
           </div>
 
           <p className="text-muted-foreground text-sm font-body mt-8">
