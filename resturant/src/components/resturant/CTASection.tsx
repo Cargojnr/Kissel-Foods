@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Phone, Calendar } from "lucide-react";
 import { restaurant } from "@/data/restaurant";
+import { Link } from "react-router-dom";
 
 export default function CTASection() {
   return (
@@ -53,10 +54,16 @@ export default function CTASection() {
               whileTap={{ scale: 0.98 }}
                className="btn-luxury group"
             >
-              <span className="inline-flex items-center gap-3">
+              <Link
+               to='reservation'
+              className="text-muted-foreground hover:text-primary transition-colors duration-300 font-body text-sm link-underline"
+                  >
+                    <span className="inline-flex items-center gap-3">
                 <Calendar className="w-5 h-5" />
                 Book Online
               </span>
+                  </Link>
+              
             </motion.a>
           </div>
 
