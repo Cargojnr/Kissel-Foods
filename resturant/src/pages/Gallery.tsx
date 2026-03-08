@@ -143,14 +143,14 @@ export default function Gallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-background/95 backdrop-blur-sm p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-background/95 backdrop-blur-sm p-6"
             onClick={() => setSelectedImage(null)}
           >
             <motion.button
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute top-6 right-6 p-2 text-foreground/60 hover:text-foreground transition-colors"
+              className="absolute top-6 right-6 p-2 w-12 h-12 rounded-ful flex items-center justify-center  text-foreground/60 hover:text-foreground transition-colors"
               onClick={() => setSelectedImage(null)}
             >
               <X className="w-8 h-8" />
@@ -169,7 +169,7 @@ export default function Gallery() {
               transition={{ duration: 0.3 }}
               src={selectedImage.src}
               alt="Gallery image"
-              className="max-w-full max-h-[85vh] object-contain"
+              className="w-full h-auto max-w-full max-h-[85vh] object-contain rounded-2xl"
               onClick={(e) => e.stopPropagation()}
             />
              <div className="text-center mt-6">
